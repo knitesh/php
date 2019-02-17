@@ -52,8 +52,7 @@
            */
 
             // Setting local to en_US to use money_format
-            $locale = Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-            setlocale(LC_MONETARY, $locale);
+            setlocale(LC_MONETARY, 'en_US');
 
             // Check if Submit Button is clicked or not
             if (isset($_POST['submit'])) {
@@ -61,7 +60,7 @@
                 // Function to check whether entered input is a numeric value or not
                 function isValidInput($income)
                 {
-                    if(is_numeric($income))
+                    if(is_numeric($income) && $income >=0)
                         return true;
 
                     return false;

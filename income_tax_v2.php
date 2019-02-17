@@ -88,7 +88,7 @@
                 // Function to check if entered value is numeric or not
                 function isValidInput($income)
                 {
-                    if (is_numeric($income))
+                    if (is_numeric($income) && $income >=0)
                         return true;
 
                     return false;
