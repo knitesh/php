@@ -53,6 +53,7 @@
 
             // Setting local to en_US to use money_format
             setlocale(LC_MONETARY, 'en_US');
+            setlocale(LC_MONETARY, 'en_US.utf8');
 
             // Check if Submit Button is clicked or not
             if (isset($_POST['submit'])) {
