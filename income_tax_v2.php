@@ -52,8 +52,8 @@
              */
 
             // Setting local to en_US to use money_format
-            $locale = Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-            setlocale(LC_MONETARY, $locale);
+            // $locale = Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+            // setlocale(LC_MONETARY, $locale);
 
             // Defining TAX_RATES data to be used through out the program
             define('TAX_RATES',
