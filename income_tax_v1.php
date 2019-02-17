@@ -52,8 +52,8 @@
            */
 
             // Setting local to en_US to use money_format
-            setlocale(LC_MONETARY, 'en_US');
-            setlocale(LC_MONETARY, 'en_US.utf8');
+            $locale = Locale::acceptFromHttp($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+            setlocale(LC_MONETARY, $locale);
 
             // Check if Submit Button is clicked or not
             if (isset($_POST['submit'])) {
