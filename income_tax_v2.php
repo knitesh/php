@@ -6,13 +6,10 @@
         <title>Income Tax v2</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="./css/materialize.min.css">
+        
         <link rel="icon" type="image/png" href="./imgages/favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="./images/favicon-16x16.png" sizes="16x16" />
-
-
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-        <script src="main.js"></script>
+        <link rel="stylesheet" href="./css/materialize.min.css">
 
     </head>
     <body>
