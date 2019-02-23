@@ -42,14 +42,14 @@ $statement->closeCursor();
                         <input  id="email" name="email" type="email" class="validate" required>
                         <label for="email">Email</label>
                     </div>
-
+                    <label>&nbsp;</label>
             </div>
             <div class="card-action">
-                <button type="submit" value="Add Student" class="btn btn-small right" name="addStudent">Add Student</button>
+                <button type="submit" value="Add Student" class="btn btn-small right">Add Student</button>
                 <a href="index.php" class="btn btn-small">View Student List</a>
             </div>
         </div>
-    </form>
+        </form>
     </div>
 </div>
 
