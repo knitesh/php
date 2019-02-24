@@ -1,16 +1,19 @@
 <?php
-require('database.php');
+/*
+ * Author: Kumar Nitesh
+ * Description: Displays Student form
+*/
 
-$query = 'SELECT *
-          FROM sk_courses
-          ORDER BY courseID';
-$statement = $db->prepare($query);
-$statement->execute();
-$courses = $statement->fetchAll();
-$statement->closeCursor();
+//Get database Object
+require('./db/database.php');
+//Get list of all courses
+include ('./db/get_all_courses.php');
+
+//display the page header
+include('./common/header.php');
+
 ?>
-<?php include('header.php');?>
-
+<!-- HTML to display the Add Student Form-->
 <div class="row">
     <div class="col s12">
         <form action="add_student.php" method="POST" id="add_student_form">
@@ -53,7 +56,8 @@ $statement->closeCursor();
     </div>
 </div>
 
-<?php include('footer.php');?>
+<?php include('./common/footer.php');?>
+<!--Script to initialize dropdown-->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('select');

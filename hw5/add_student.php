@@ -1,33 +1,25 @@
 <?php
+/*
+ * Author: Kumar Nitesh
+ * Description: Add new Student to a given course
+*/
 
-
-// Get the product data
-    $courseID = filter_input(INPUT_POST, 'courseID');
-    $firstName = filter_input(INPUT_POST, 'firstName');
-    $lastName = filter_input(INPUT_POST, 'lastName');
+// Get the student data from POST body and sanitize it before saving
+    $courseID = filter_input(INPUT_POST, 'courseID',FILTER_SANITIZE_STRING);
+    $firstName = filter_input(INPUT_POST, 'firstName',FILTER_SANITIZE_STRING);
+    $lastName = filter_input(INPUT_POST, 'lastName',FILTER_SANITIZE_STRING);
     $email = filter_input(INPUT_POST, 'email');
 
-// Validate inputs
+// Validate inputs, and in case of missing required data show error page
     if ($courseID == null || $firstName == false || $lastName == null || $email == null) {
         $error = "Invalid student data. Check all fields and try again.";
-        include('error.php');
+        include('./common/error.php');
     } else {
-        require_once('database.php');
-
-        // Add the product to the database
-        $query = 'INSERT INTO sk_students
-                 (courseID, firstName, lastName, email)
-              VALUES
-                 (:courseID, :firstName, :lastName, :email)';
-        $statement = $db->prepare($query);
-        $statement->bindValue(':courseID', $courseID);
-        $statement->bindValue(':firstName', $firstName);
-        $statement->bindValue(':lastName', $lastName);
-        $statement->bindValue(':email', $email);
-        $statement->execute();
-        $statement->closeCursor();
-
-        // Display the Student List page
+        //Get the database connection object
+        require_once('./db/database.php');
+        //add student
+        include_once('./db/add_student.php');
+        // Display Updated Student List page
         include('index.php');
 
-}
+    }

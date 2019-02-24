@@ -1,3 +1,4 @@
+<!-- Header Page used on all pages-->
 <!DOCTYPE html>
 <html>
 
@@ -33,13 +34,14 @@
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo center">KNITESH</a>
+            <a href="#!" class="brand-logo center">CS602 - Kumar Nitesh</a>
             <ul class="right hide-on-med-and-down">
-<!--                <li><a href="./index.php">List Students</a></li>-->
+                <li><a href="./index.php">Home</a></li>
             </ul>
         </div>
     </nav>
 </div>
+<!-- Main Element is closed in Footer-->
 <main class="container">
     <h4>Course Manager</h4>
     <hr/>

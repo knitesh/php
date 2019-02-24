@@ -1,20 +1,21 @@
 <?php
-require_once('database.php');
+/*
+ * Author: Kumar Nitesh
+ * Description: Display Course List
+*/
 
-// Get all categories
-$query = 'SELECT * FROM sk_courses
-                       ORDER BY courseID';
-$statement = $db->prepare($query);
-$statement->execute();
-$courses = $statement->fetchAll();
-$statement->closeCursor();
+    //Get database Object
+    require('./db/database.php');
+    //Get list of all courses
+    include ('./db/get_all_courses.php');
+    // Display page header
+    include('./common/header.php');
 
-
-?>
-<?php include('header.php');?>
+ ?>
+<!--HTML Page to Display Course List and Add Course FORM-->
 <div class="row">
     <div class="col s12 right">
-        <a href="index.php" class="btn-large waves-effect waves-light right">List Students</a></p>
+        <a href="index.php" class="btn-large waves-effect waves-light">List Students</a></p>
 <!--        <a class="btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>-->
     </div>
 </div>
@@ -44,7 +45,7 @@ $statement->closeCursor();
             </table>
         </div>
     </div>
-    <div class="card col s12 m6">
+    <div class="card col s12 offset-m1 m5">
         <form action="add_course.php" method="POST" id="add_course_form">
             <div class="card-content">
                 <span class="card-title">Add Course</span>
@@ -69,11 +70,6 @@ $statement->closeCursor();
 
 </div>
 
-
-
-
-
-
-
-<?php include('footer.php');?>
+<!-- Display page footer-->
+<?php include('./common/footer.php');?>
 
